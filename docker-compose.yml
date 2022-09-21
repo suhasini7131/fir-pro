@@ -5,8 +5,8 @@ services:
     ports:
       - 3306:3306
     container_name: mysql-container
-    network_mode: host
-    hostname: localhost
+    #network_mode: host
+    #hostname: localhost
     environment:
       MYSQL_ROOT_PASSWORD: Global@145#
       MYSQL_USERNAME: root
@@ -16,40 +16,40 @@ services:
   mongodbservice:
     image: mongo:latest
     container_name: mongo-container
-    network_mode: host
-    hostname: localhost
+    #network_mode: host
+    #hostname: localhost
     ports:
       - 27017:27017
 
   configserver:
     container_name: config-server-container
     build: config-server/
-    hostname: localhost
-    network_mode: host
+    #hostname: localhost
+    #network_mode: host
     ports:
       - 8888:8888
 
   eurekaserver:
     container_name: eureka-server-container
     build: eureka-server/
-    hostname: localhost
-    network_mode: host
+    #hostname: localhost
+    #network_mode: host
     ports:
       - 8761:8761
 
   api-gateway:
     container_name: api-gateway-container
     build: api-gateway/
-    hostname: localhost
-    network_mode: host
+    #hostname: localhost
+    #network_mode: host
     ports:
       - 8080:8080
 
   authenticationservice:
     container_name: authentication-service-container
     build: authentication-service/
-    hostname: localhost
-    network_mode: host
+    #hostname: localhost
+    #network_mode: host
     ports:
       - 8095:8095
     depends_on:
@@ -61,8 +61,8 @@ services:
   emailservice:
     container_name: email-service-container
     build: email-service/
-    hostname: localhost
-    network_mode: host
+    #hostname: localhost
+    #network_mode: host
     ports:
       - 8075:8075
     depends_on:
@@ -75,8 +75,8 @@ services:
   appointmentservice:
     container_name: appointment-service-container
     build: appointment-service/
-    hostname: localhost
-    network_mode: host
+    #hostname: localhost
+    #network_mode: host
     ports:
       - 8097:8097
     depends_on:
@@ -88,8 +88,8 @@ services:
   paymentservice:
     container_name: payment-service-container
     build: payment-service/
-    hostname: localhost
-    network_mode: host
+    #hostname: localhost
+    #network_mode: host
     ports:
       - 8070:8070
     depends_on:
@@ -101,8 +101,8 @@ services:
   userservice:
     container_name: user-service-container
     build: user-service/
-    hostname: localhost
-    network_mode: host
+    #hostname: localhost
+    #network_mode: host
     ports:
       - 8090:8090
     depends_on:
@@ -116,8 +116,8 @@ services:
     image: product-webapp
     restart: always
     container_name: product-webapp
-    network_mode: host
-    hostname: localhost
+    #network_mode: host
+    #hostname: localhost
     ports:
       - 4200:4200
     depends_on:
